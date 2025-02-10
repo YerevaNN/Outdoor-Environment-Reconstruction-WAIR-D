@@ -1,0 +1,11 @@
+_target_: src.datamodules.WAIRDSequenceDatamodule
+
+name: wair_d_sequence
+data_path: ${oc.env:SEQUENCE_DATA_PATH}
+scenario: scenario_1
+scenario2_path: ${oc.env:SCENARIO2_PATH}
+batch_size: 8
+num_workers: 6
+use_channels: null
+n_links: 64
+los_ratio: 1

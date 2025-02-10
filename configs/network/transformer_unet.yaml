@@ -1,0 +1,13 @@
+_target_: src.networks.TransformerUNet
+
+num_classes: 1
+
+t_input_dim: 13
+t_embed_dim: 256
+t_num_heads: 4
+t_num_layers: 4
+
+u_input_channels: 3
+u_num_layers: 5
+u_features_start: 64
+u_input_size: null

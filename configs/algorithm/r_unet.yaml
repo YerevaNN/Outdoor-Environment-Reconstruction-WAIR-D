@@ -1,0 +1,5 @@
+_target_: src.algorithms.RUNet
+
+name: r_unet
+use_ce: False
+use_dice: True

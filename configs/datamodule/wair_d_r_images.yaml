@@ -1,0 +1,16 @@
+_target_: src.datamodules.WAIRDRImagesDatamodule
+
+name: wair_d_r_images
+data_path: ${oc.env:R_IMAGES_DATA_PATH}
+scenario: scenario_1
+scenario2_path: ${oc.env:SCENARIO2_PATH}
+batch_size: 8
+num_workers: 6
+num_bs: [ 5, 5 ]
+num_ue: [ 30, 30 ]
+random_sample: null
+random_crop: null
+middle_crop: null
+random_flip: False
+random_rotate: False
+aoa_aod: [ 0, 1 ] # 0 for AoA 1, for AoD

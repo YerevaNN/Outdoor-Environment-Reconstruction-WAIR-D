@@ -1,0 +1,17 @@
+_target_: src.datamodules.WAIRDImagesSequenceDatamodule
+
+name: wair_d_images_sequence
+image_data_path: ${oc.env:IMAGE_DATA_PATH}
+sequence_data_path: ${oc.env:SEQUENCE_DATA_PATH}
+scenario: scenario_1
+scenario2_path: ${oc.env:SCENARIO2_PATH}
+batch_size: 8
+num_workers: 6
+output_kernel_size: 3
+kernel_size_decay: 1
+use_channels_img: null
+use_channels_seq: null
+n_links: 64
+los_ratio: 1
+input_kernel_size: null
+no_supervision_image: False

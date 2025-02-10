@@ -1,0 +1,5 @@
+_target_: src.algorithms.RTransformerUNet
+
+name: r_transformer_unet
+use_ce: False
+use_dice: True

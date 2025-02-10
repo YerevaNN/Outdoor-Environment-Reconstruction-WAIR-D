@@ -1,0 +1,13 @@
+_target_: src.datamodules.WAIRDRVarChannelsSequencesDatamodule
+
+name: wair_d_r_var_channels_sequences
+images_data_path: ${oc.env:R_IMAGES_DATA_PATH}
+sequences_data_path: ${oc.env:SEQUENCE_DATA_PATH}
+scenario: scenario_1
+scenario2_path: ${oc.env:SCENARIO2_PATH}
+batch_size: 8
+num_workers: 6
+channels_range: [ 10, 150 ]
+aoa_aod: [ 0, 1 ] # 0 for AoA 1, for AoD
+use_channels: [ 0, 1, 2 ]
+n_links: 5
