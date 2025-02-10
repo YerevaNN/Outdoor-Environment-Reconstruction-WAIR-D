@@ -5,11 +5,11 @@ print_config: True
 ignore_warnings: True
 
 defaults:
-  - datamodule: wair_d_images
+  - datamodule: wair_d_r_var_channels_sequences
   - optimizer: adam
   - scheduler: null
-  - algorithm: unet_erm
-  - network: unet
+  - algorithm: r_transformer_unet
+  - network: clip_plus_upernet
   - trainer: default
   - callbacks: default
   - loggers: [ aim ]
