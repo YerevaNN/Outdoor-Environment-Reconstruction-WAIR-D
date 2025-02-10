@@ -18,5 +18,5 @@ Conventional methods for outdoor environment reconstruction rely predominantly o
    ```
 5. Activate the newly created conda environment with the command:
    ```commandline
-   conda activate wair_d_distal
+   conda activate wair_d_rec
    ```
