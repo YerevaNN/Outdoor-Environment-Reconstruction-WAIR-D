@@ -1,4 +1,4 @@
-name: wair_d_distal
+name: wair_d_rec
 channels:
   - defaults
   - conda-forge
