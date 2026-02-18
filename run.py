@@ -19,7 +19,7 @@ hydra.core.global_hydra.GlobalHydra.instance().clear()
 @hydra.main(config_path="configs", config_name="train", version_base="1.2")
 def main(config: DictConfig) -> None:
     from src import (
-        utils, train, visualize, prepare_data, test_cnn, unet_visualize, validation_visualize, pred,
+        utils, train, prepare_data, pred,
         evaluate,
     )
     
@@ -44,18 +44,6 @@ def main(config: DictConfig) -> None:
     
     if config.name == "train":
         return train(config)
-    
-    if config.name == "visualize":
-        return visualize(config)
-    
-    if config.name == "test_cnn":
-        return test_cnn(config)
-    
-    if config.name == "unet_visualize":
-        return unet_visualize(config)
-    
-    if config.name == "validation_visualize":
-        return validation_visualize(config)
     
     if config.name == "inference":
         return pred(config)

@@ -8,13 +8,12 @@ ignore_warnings: True
 checkpoint_path: ${oc.env:OUTPUT_DIR}/2023-12-20_12-01-24/checkpoints/epoch_0013.ckpt
 gpu: 1
 split: test
-reconstruction: False
 prediction_dir: ${oc.env:PREDICTIONS_PATH}/${split}
 
 defaults:
-  - datamodule: wair_d_images
-  - algorithm: unet_erm
-  - network: unet
+  - datamodule: wair_d_r_var_channels_sequences
+  - algorithm: r_transformer_unet
+  - network: clip_plus_upernet
   - _self_
 
 hydra:

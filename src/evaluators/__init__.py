@@ -1,2 +1,1 @@
-from src.evaluators.loc_eval import LocalizationEvaluation
 from src.evaluators.rec_eval import ReconstructionEvaluation

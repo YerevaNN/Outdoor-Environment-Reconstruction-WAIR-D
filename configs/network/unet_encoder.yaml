@@ -1,5 +1,0 @@
-_target_: src.networks.UNetEncoder
-
-input_channels: 3
-num_layers: 5
-features_start: 64

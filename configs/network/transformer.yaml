@@ -1,6 +1,0 @@
-_target_: src.networks.Transformer
-
-input_dim: 15
-embed_dim: 256
-num_heads: 4
-num_layers: 4

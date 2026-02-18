@@ -1,9 +1,0 @@
-# @package _global_
-name: validation_visualize
-seed: 0
-print_config: True
-ignore_warnings: True
-
-raw_data_path: ${oc.env:RAW_DATA_DIR}
-predictions_path: ${oc.env:PREDICTIONS_PATH}/validation/
-baseline_radius: 10

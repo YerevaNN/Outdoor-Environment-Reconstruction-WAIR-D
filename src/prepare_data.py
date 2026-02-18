@@ -375,18 +375,16 @@ def prepare_data(config: DictConfig) -> None:
         raw_env_path = os.path.join(config.raw_data_dir, env)
         prepared_env_path = os.path.join(config.prepared_data_dir, env)
         if config.reconstruction:
-            args.append((env, raw_env_path, prepared_env_path, config.image_size, config.num_shortest_paths))
+                args.append((env, raw_env_path, prepared_env_path, config.image_size, config.num_shortest_paths))
         else:
             args.append((env, raw_env_path, prepared_env_path, config.image_size))
     
     with Pool(config.n_processes) as p:
         if config.reconstruction:
-            res = list(tqdm(p.imap(prepare_env_reconstruction, args), total=len(args)))
+                res = list(tqdm(p.imap(prepare_env_reconstruction, args), total=len(args)))
         elif config.sequence:
             res = list(tqdm(p.imap(prepare_env_sequence, args), total=len(args)))
-        else:
-            res = list(tqdm(p.imap(prepare_env_data, args), total=len(args)))
-    
+        
     data = dict(ChainMap(*res))
     
     np.savez_compressed(os.path.join(config.prepared_data_dir, "data.npz"), **data)

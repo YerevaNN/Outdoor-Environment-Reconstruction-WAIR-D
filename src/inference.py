@@ -41,19 +41,10 @@ def pred(config: DictConfig) -> None:
             out = nn.functional.sigmoid(algorithm.pred(batch)).detach().cpu().numpy()[0, 0]
             np.savez(os.path.join(pred_path, str(i)), out)
     elif config.split == "scenario2":
-        if config.reconstruction:
-            for env in tqdm(list(os.listdir(config.datamodule.scenario2_path))):
-                idx = datamodule.val_set._environments.index(env)
-                batch = datamodule.val_set[idx]
-                out = nn.functional.sigmoid(algorithm.pred(batch)).detach().cpu().numpy()[0, 0]
-                np.savez(os.path.join(pred_path, env), out)
-        else:
-            for env in tqdm(list(os.listdir(config.datamodule.scenario2_path))):
-                for ue_idx in range(30):
-                    env_num = datamodule.val_set._environments.index(env)
-                    idx = env_num * 150 + ue_idx
-                    batch = datamodule.val_set[idx]
-                    out = nn.functional.sigmoid(algorithm.pred(batch)).detach().cpu().numpy()[0, 0]
-                    np.savez(os.path.join(pred_path, f"{env}_{ue_idx}"), out)
+        for env in tqdm(list(os.listdir(config.datamodule.scenario2_path))):
+            idx = datamodule.val_set._environments.index(env)
+            batch = datamodule.val_set[idx]
+            out = nn.functional.sigmoid(algorithm.pred(batch)).detach().cpu().numpy()[0, 0]
+            np.savez(os.path.join(pred_path, env), out)
     else:
         raise ValueError(f"Unknown split {config.split}")

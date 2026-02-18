@@ -1,7 +1,0 @@
-_target_: src.datamodules.WAIRDDatamodule
-
-name: wair_d
-data_path: ${oc.env:IMAGE_DATA_PATH}
-scenario: scenario_1
-batch_size: 30
-num_workers: 15

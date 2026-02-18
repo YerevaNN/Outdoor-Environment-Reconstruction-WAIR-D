@@ -1,7 +1,0 @@
-_target_: src.networks.MLPUNetEncoder
-
-mlp_input_dim: 5
-
-u_input_channels: 3
-u_num_layers: 5
-u_features_start: 64

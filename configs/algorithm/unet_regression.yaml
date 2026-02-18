@@ -1,6 +1,0 @@
-_target_: src.algorithms.UNetRegression
-
-name: unet_regression
-allowable_errors: [ 1, 5, 10, 30, 50 ]
-
-groups_count: 2
